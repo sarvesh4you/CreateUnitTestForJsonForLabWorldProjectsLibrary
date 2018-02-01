@@ -11,12 +11,12 @@ On the client, the library will translate the JSON-string back into a "ServerAns
 
 I have created few basic unit tests for "JsonForLabWorldProjects" library that could be used by a developer for ongoing development of the library. Please find "UnitTestForLibrary.cs" under the 
  
- \testengineertest\JsonForLabWorldProducts\Example
+ \CreateUnitTestForJsonForLabWorldProjectsLibrary\JsonForLabWorldProducts\Example\UnitTestForLibrary.cs
 
 
 Test 1 - [Test with the valid/invalid input data that library provides an valid Object-Type "ServerAnswerAsData" successfully.]
 
-Test 2 - [Test that librry translates a "ServerAnswerAsData"-Object into a valid JSON-string successfully.]
+Test 2 - [Test that library translates a "ServerAnswerAsData"-Object into a valid JSON-string successfully.]
 
 Test 3 - [Test that library translates the JSON-string back into a "ServerAnswerAsData"-Object successfully.]
          
