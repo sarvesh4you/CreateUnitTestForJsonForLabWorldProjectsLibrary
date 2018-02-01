@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props" Condition="Exists('packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props')" />
+  <Import Project="packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{275CB478-B795-4097-BA15-BB59CAF2CAC3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>JsonForLabWorldProducts</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\builds\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>JsonForLabWorldProducts</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="YamlDotNet, Version=4.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\YamlDotNet.4.2.1\lib\net35\YamlDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LitJson_modified\IJsonWrapper.cs" />
+    <Compile Include="LitJson_modified\JsonData.cs" />
+    <Compile Include="LitJson_modified\JsonException.cs" />
+    <Compile Include="LitJson_modified\JsonMapper.cs" />
+    <Compile Include="LitJson_modified\JsonReader.cs" />
+    <Compile Include="LitJson_modified\JsonWriter.cs" />
+    <Compile Include="LitJson_modified\Lexer.cs" />
+    <Compile Include="LitJson_modified\ParserToken.cs" />
+    <Compile Include="ToJsonAndBack\ModuleTypes\DoubleModule\ModuleDescriptionDouble.cs" />
+    <Compile Include="ToJsonAndBack\ModuleTypes\PushButtonModule\ModuleDescriptionPushButton.cs" />
+    <Compile Include="ToJsonAndBack\ModuleTypes\PushButtonModule\JsonStructurePushButton.cs" />
+    <Compile Include="ToJsonAndBack\ModuleTypes\TextModule\ModuleDescriptionText.cs" />
+    <Compile Include="ToJsonAndBack\ModuleBase\ModuleDescriptionBase.cs" />
+    <Compile Include="ToJsonAndBack\ModuleBase\ModuleChangeDescriptionBase.cs" />
+    <Compile Include="ToJsonAndBack\ServerAnswer\ServerAnswerAsData.cs" />
+    <Compile Include="ToJsonAndBack\ModuleTypes\DoubleModule\IToJsonAsDoubleModule.cs" />
+    <Compile Include="ToJsonAndBack\ModuleTypes\PushButtonModule\IToJsonAsPushButtonModule.cs" />
+    <Compile Include="ToJsonAndBack\ModuleTypes\TextModule\IToJsonAsTextModule.cs" />
+    <Compile Include="ToJsonAndBack\Enums.cs" />
+    <Compile Include="ToJsonAndBack\ModuleBase\IChangesToJsonAsBaseModule.cs" />
+    <Compile Include="ToJsonAndBack\ModuleBase\IModuleDescriptionBase.cs" />
+    <Compile Include="ToJsonAndBack\ServerAnswer\JsonStructureServerAnswer.cs" />
+    <Compile Include="ToJsonAndBack\ModuleBase\JsonStructureBase.cs" />
+    <Compile Include="ToJsonAndBack\ModuleTypes\DoubleModule\JsonStructureDouble.cs" />
+    <Compile Include="ToJsonAndBack\ModuleTypes\TextModule\JsonStructureText.cs" />
+    <Compile Include="ToJsonAndBack\JsonTranslator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LitJson_modified\AssemblyInfo.cs.in" />
+    <None Include="LitJson_modified\Makefile.am" />
+    <None Include="LitJson_modified\Makefile.in" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props'))" />
+    <Error Condition="!Exists('packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props'))" />
+  </Target>
+</Project>
